@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timmy's Dungeon</title>
+    <link rel="stylesheet" href="game_styles.css">
+    <script src="game_script.js"></script>
+</head>
+<body>
+    <div class="dev-tools">
+        <p>Dev Tools</p>
+        <button onclick="toggleShroud()">Toggle shroud</button>
+        <button onclick="runEncounter()">Run Encounter</button>
+        <p id="encounterCounter"></p>
+    </div>
+    <div class="game_container">
+        <div id="game_area">
+
+            <div id="d20rollBox">
+                <h1 id="d20rollBox-text"></h1>
+            </div>
+
+            <div id="encounter_area">
+                <div class="fight-character">
+                    <h1>Timmy</h1>
+                    <div class="fight-character-image-container">
+                        <img src="./assets/characters/Timmy Sprite No Frame.gif" class="timmy-image">
+                    </div>
+                    <div class="health-container">
+                        <p>Health</p>
+                        <div class="health-bar-continer">
+                            <p class="healthNumber" id="timmyHealth">100</p>
+                            <div class="healthBar" id="timmyHealthBar"></div>
+                        </div>
+                    </div>
+                    <p id="timmyAttack">Attack</p>
+                    <p id="timmyDefense">Defense</p>
+                </div>
+
+                <div class="fight-feed">
+                    <p id="continue-hint">Press SPACE to continue</p>
+                    <div id="fight-messages">Test</div>
+                    <div class="action-continer">
+                        <button onclick="castSpell(1)" class="action-button lockedSpell" id="spell1">FIREBOLT</button>
+                        <button onclick="castSpell(2)" class="action-button lockedSpell" id="spell2">LOCKED</button>
+                        <button onclick="castSpell(3)" class="action-button lockedSpell" id="spell3">LOCKED</button>
+                        <button onclick="castSpell(4)" class="action-button lockedSpell" id="spell4">LOCKED</button>
+                        <button onclick="castSpell(5)" class="action-button lockedSpell" id="spell5">LOCKED</button>
+                        
+                        <div class="spell-info lockedSpellInfo" id="spell1-Info">
+                            <p style="opacity: .5;">To hit: D20 + Attack Lvl | Damage: D6 + Attack Lvl</p>
+                            <p id="spell1Stats">To hit: D20 + Attack Lvl | Damage: D6 + Attack Lvl</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="fight-character" id="enemySheet">
+                    <h1 id="enemyName">Enemy</h1>
+                    <div class="fight-character-image-container">
+                        <img id="enemyImage">
+                    </div>
+                    <div class="health-container">
+                        <p>Health</p>
+                        <div class="health-bar-continer">
+                            <p class="healthNumber" id="enemyHealth">100</p>
+                            <div class="healthBar" id="enemyHealthBar"></div>
+                        </div>
+                    </div>
+                    <p id="enemyAttack">Attack</p>
+                    <p id="enemyDefense">Defense</p>
+                </div>
+            </div>
+
+            <div id="message-box">
+                <p id="message-box-text">Message will appear here</p>
+                <p>Press Space to Continue</p>
+            </div>
+
+            <img src="SHROUD.png" id="shroud">
+            <div id="timmy">
+                <img src="./assets/characters/Timmy Sprite No Frame.gif" class="timmy-sprite">
+                <div id="interact-prompt"><p class="interact-prompt-text">SPACE</p></div>
+            </div>
+
+            <div class="item-casing" id="key-game"><img src="./assets/items/key-2674073.svg" class="item"></div>
+            <img id="door" src="./assets/items/double-door.png">
+
+            <img src="./assets/backgrounds/main_map.jpg">
+        </div>
+
+        <div id="game_bar">
+            <div class="timmy-stats">
+                <h1>STATS</h1>
+                <p>Attack:1</p>
+                <p>Defence:10</p>
+            </div>
+            <div class="timmy-items">
+                <h1>Items</h1>
+                <div class="item-board">
+                    <div class="nav-item-casing" id="key-nav"><img src="./assets/items/key-2674073.svg" class="nav-item"></div>
+                </div>
+            </div>
+            <div class="timmy-health">
+                <h1>Health</h1>
+                <h1>100</h1>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
